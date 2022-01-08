@@ -273,22 +273,134 @@ public class Java100ClassOne {	//클래스는 대문자
 //	}
 //}
 
+
 //문제 
 //수치 연산자에 대해서 설명해보시오.
 //이 문제는 자바의 기본적인 수치 연산자에 대해서 알고 있는지를 묻는 문제이다.
 
-public class Java100ClassOne {
-	public static void main(String[] args) {
-		
-		int a,b,c,d;
-		a=60; b=7; c=2; d=20;
-		
-		System.out.println(a+b);
-		System.out.println("a+b="+ (a+b));	//괄호로 구별해서 먼저 연산하게끔해준다. 
-		
-		
-	}
-}
+//public class Java100ClassOne {
+//	public static void main(String[] args) {
+//		
+//		int a,b,c,d;
+//		a=60; b=7; c=2; d=20;
+//		
+//		System.out.println(a+b);
+//		System.out.println("a+b="+ (a+b));	//괄호로 구별해서 먼저 연산하게끔해준다. 
+//		System.out.println("a-b="+(a-b));
+//		System.out.println("a*b="+(a*b));
+//		System.out.println("a/b="+(a/b));
+//		System.out.println("a%b="+(a%b));
+//	}
+//}
+
+
+
+//문제 
+//수치 연산자를 사용한 연산에서 소숫점 결과가 예상과 다르게 나오는 것에 대해서 설명해보시오. // 아래의 코드 결과가 올바르게 나오도록 수정해보시오.
+//이 문제는 자바의 기본적인 수치 연산자에 대해서 알고 있는지를 묻는 문제이다.
+
+//public class Java100ClassOne {
+//	public static void main(String[] args) {
+//	
+//	//축약된 형태 
+//	int a=0, b=100;
+//	a = a+1;
+//	System.out.println(a);
+//	
+//	a += 1;			//이렇게쓰는 방법 알아야한다. 
+//	System.out.println(a);
+//	
+//	a -= 1;
+//	System.out.println(a);
+//
+//	b++;
+//	System.out.println(b); //101
+//
+//	b++;
+//	System.out.println(b); //102
+//
+//	
+//	}
+//}
+
+
+
+
+
+//문제 
+//수치 연산자를 사용한 연산에서 소숫점 결과가 예상과 다르게 나오는 것에 대해서 설명해보시오. // 아래의 코드 결과가 올바르게 나오도록 수정해보시오.
+//이 문제는 자바의 기본적인 수치 연산자에 대해서 알고 있는지를 묻는 문제이다.
+
+//public class Java100ClassOne {
+//	public static void main(String[] args) {
+//		int a=60, b=8;
+//		int rst1;
+//		
+//		rst1 = a/b;
+//		
+//		System.out.println(rst1);
+//		System.out.println((double)(rst1));	//7.0 으로 출력
+//		
+//		double rst2;
+//		rst2 = a/(double)b;
+//		System.out.println(rst2);		//둘중에 하나만 double로 바꾸면 , 자바는 더큰값을 자료형으로인식해7.5가 출력된다. 
+//
+//	}
+//}
+
+
+//문제
+//관계 연산자에 대해서 설명해보시오.
+//이 문제는 자바의 기본적인 관계 연산자에 대해서 알고 있는지를 묻는 문제이다.
+//public class Java100ClassOne {
+//	public static void main(String[] args) {
+//	
+//		//관계연산자  ==, != , >=, <=  즉 참과 거짓이냐 
+//		//과너계연산자를 사용해서 연산을 수행하면 그결과는 참, 거짓이된다.
+//		
+//		int kor = 70, eng = 30, math=39;
+//		boolean rst1, rst2, rst3 ;
+//		
+//		rst1 = kor == eng; //false
+//		rst2 = kor != eng; //true
+//		rst3 = kor > eng; //true
+//		System.out.println(rst1);
+//		System.out.println(rst2);
+//		System.out.println(rst3);
+//
+//	}
+//}
+
+
+
+
+
+//문제
+//논리 연산자에 대해서 설명해보시오.
+//참, 거짓을 판단하는 문장을 가지고 논리 연산자를 사용해보시오.
+//이 문제는 자바의 기본적인 논리 연산자에 대해서 알고 있는지를 묻는 문제이다.
+
+//public class Java100ClassOne {
+//	public static void main(String[] args) {
+//		
+//		// &&(and)   || (or)   ! (not)
+//		// A && B 둘다 모두 참이여야함
+//		// A || B 둘중 하나만 참이여만함
+//			
+//		int a = 10, b=20, c=30; 
+//		
+//		boolean rst1 = a<b && c>b;
+//		System.out.println(rst1);
+//		
+//		boolean rst2 = a<b || c<b;
+//		System.out.println(rst2);
+//	
+//		boolean rst3 = a>c || b!=c;
+//		System.out.println(rst3);
+//		
+//	}	
+//}
+
 
 
 
