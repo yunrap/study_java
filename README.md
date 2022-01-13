@@ -793,3 +793,49 @@ public class Java100ClassThree {
 객체의 동작 -->메서드(method) --> 함수와 거의 동일.<br>
 클래내에서의 함수는 메서드라고 부른다. 거의 함수와 동일하다. <br>
 
+
+### 문제23 (21.1.14)
+FarmMachine의 속성과 동작들을 가지는 클래스를 코드로 구현하고 <br>
+객체를 생성하여 동작시켜보시오. <br>
+ 이 문제는 어떤 사물에 대한 클래스를 실제 코드로 구현할 수 있는지를 묻는 문제이다.<br>
+아래와 같이 결과가 나오도록 작성하시오.<br>
+
+```
+1000000
+2020
+red
+Farm-machine is moving.
+Fram-machine is digging.
+Fram-machine is grinding.
+```
+
+```
+public class Java100ClassThree {
+	public static void main(String[] args) {
+
+		//[1]:객체 생성
+		FarmMachine fn = new FarmMachine();
+		System.out.println(fn);
+		
+		//생성된 객체에 속성값 입력하기 
+		fn.price = 1000000;
+		fn.year = 2020;
+		fn.color = "red";
+		
+		// [3] : 속성값 출력하기
+		System.out.println(fn.price);
+		System.out.println(fn.year);
+		System.out.println(fn.color);
+		
+		// [4] : 동작 수행하기
+		fn.move();
+		fn.dig();
+	}
+}
+```
+
+
+
+
+
+
