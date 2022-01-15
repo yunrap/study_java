@@ -650,6 +650,9 @@ public class Java100ClassThree {
 이 문제는 앞서 다뤘던 문제의 Call by value 방식을 Call by reference 방식으로 수정해서 보내라는 의미다. <br>
 a 값이 같은 결과가 나오도록 코드를 수정해보시오.<br>
 
+
+### 해설18
+
 ```
 public class Java100ClassThree {
 	
@@ -678,6 +681,8 @@ public class Java100ClassThree {
 a 값이 같은 결과가 나오도록 코드를 수정해보시오.<br>
 단, 클래스와 Wrapper, 객체 생성에 대한 개념이 필요하므로 관련 공부를 하고 보는 것이 이해하는데 도움이 된다.<br>
 
+
+### 해설19
 
 ```
 class TestNumber{
@@ -709,6 +714,10 @@ public class Java100ClassThree {
 2개의 정수형 값을 리턴하는 메서드를 구현하시오.<br>
 이 문제는 두개의 리턴 값을 반환하는 메서드 작성법을 아는지에 대해서 묻는 문제이다. <br>
 
+
+
+
+### 해설21
 ```
 import java.util.Arrays;
 public class Java100ClassThree {
@@ -738,6 +747,10 @@ public class Java100ClassThree {
 반환값이 2개 있는 메서드를 구현해보시오.<br>
 메서드는 ( "korea", "USA" ) 입력시 소문자는 대문자로 대문자는 소문자로 출력되도록 구현한다.<br>
 이 문제는 자바의 메서드 작성시 리턴되는 반환값이 2개일 때 처리하는 방법을 아는지에 대해서 묻는 문제이다.<br>
+
+
+
+### 해설21
 
 ```
 public class Java100ClassThree {
@@ -774,6 +787,9 @@ public class Java100ClassThree {
 클래스란 무엇이고 어떤 역할을 하는지에 대해서 설명해보시오.<br>
 이 문제는 클래스의 개념과 역할, 용도 등에 대해서 알고 있는지를 묻는 문제이다.<br>
 
+
+### 해설22
+
 [1]: 클래스란 무엇인가?<br>
 클래스란 객체(또는 인스턴스)를 생성하는 하나의 공장(=틀, 프레임, 템플릿, 판형 등등...)이다.<br>
 시골 허허벌판에 농기계를 만들어내는 공장(class)이 들어섰고, 농부들이 주문을 넣으면 농기계가 만들어져나온다. -->그게바로 "객체"~!!<br>
@@ -809,7 +825,30 @@ Fram-machine is digging.
 Fram-machine is grinding.
 ```
 
+### 해설23 
+
 ```
+class FarmMachine {
+	//[1] 속성(특징)
+	int price; 	//가격
+	int year;	//연식
+	String color;	//색상
+	
+	
+	//[2] 동작/기능/행동(method) --> 농기계마다 동작이 다양할 것이므로공통적인 동작을 생각해본다.
+	void move() {
+		System.out.println("Farm-machine is moving");
+	}
+	
+	void dig() {
+		System.out.println("Farm-machine is digging");
+	}
+	
+	void gring() {
+		System.out.println("Fram-machine is grinding");
+	}
+}
+
 public class Java100ClassThree {
 	public static void main(String[] args) {
 
@@ -834,6 +873,138 @@ public class Java100ClassThree {
 }
 ```
 
+### 문제24 (21.01.15)
+문자열을 숫자로 바꿔서 연산해보시오.<br>
+이때, 인자값으로 진수를 지정해서 출력해보시오.<br>
+이 문제는 자바 프로그래밍시 문자열을 숫자로 변환시키는 것에 대해서 아는지를 묻는 문제이다.<br>
+
+```
+[ 결과 출력 ]
+-------------------------------------------------------------------------------------------------------------------------------------------
+1+2=3
+1 + 2 = 12 -------------------------[진수 지정] 2022
+2022
+1
+9
+516
+10
+15
+255
+-------------------------[진수 지정]
+```
+
+
+
+### 해설24 
+
+```
+[!] : 왜 변환이 필요한가?
+1+2 숫자끼리의 연산은 3이지만, 문자열끼리 연산은 12가 되기 때문에 숫자로 변환 후 연산을 수행해야한다.
+문자열을 숫자로 변환시키는 방법 --> Integer.parseInt() 사용
+parseInt() --> Integer 클래스의 static으로 지정 --> 따라서, 객체의 생성없이 바로 "클래스명.parseInt()로 직접사용이가능"
+두번째 인자 값으로 진수를 지정 --> 해당 진수에 맞는 값이 됨 --> Integer.parseInt("1000",2);
+
+public class Java100ClassThree {
+	public static void main(String[] args) {
+		//[1]: 숫자끼리의 연산
+		int a = 1;
+		int b = 2;
+		int c = a+b;
+		System.out.println("a+b=" +c);	//3
+		
+		//[2]: 문자열끼리의 연산
+		String a1 = "1";
+		String b1 = "2";
+		String c1 = a1 + b1;
+		System.out.println("a1 + b1=" +c1 );	//12
+		System.out.println(c1.getClass().getName());
+		
+		//[3]: 문자열 --> 숫자로 변환후 연산
+		int a2 = Integer.parseInt(a1);
+		int b2 = Integer.parseInt(b1);
+		System.out.println(a2 + b2);
+		
+		//[4]: 진수 지정
+		System.out.println("--------------------------[진수 지정 ]");
+		System.out.println(Integer.parseInt("2022"));	//2022
+		System.out.println(Integer.parseInt("2022", 10));	//2022
+		System.out.println(Integer.parseInt("1", 2));	//1
+		System.out.println(Integer.parseInt("1001", 2));	//9
+		System.out.println(Integer.parseInt("1004", 8));	/516
+		System.out.println(Integer.parseInt("A",16));	//10
+		System.out.println(Integer.parseInt("B", 16));	//13
+		System.out.println(Integer.parseInt("FF", 16));	//255
+		
+	}
+}
+
+```
+
+### 문제25
+
+다음은 클래스 작성시 주의할 사항인데 이중 틀린 것을 말해보시오.<br>
+이 문제는 여러 클래스 작성시 주의할 점에 대해서 알고 있는지를 묻는 문제이다.<br>
+
+[문제] 클래스 작성시 주의사항으로 틀린것은?<br>
+(1) 하나의 파일에 2개이상의 클래스를 작성할 수 있다.<br>
+(2) 3개의 클래스가 있다면 자바 파일명이 될수있는것은 public 키워드가 붙은 클래스이다.<br>
+(3) 하나의 파일에 있는 3개의 클래스에 모두 public 키워드를 붙일 수 있다.<br>
+(4) 한 파일내 3개 이상의 클래스에 모두 public 키워드를 안붙일 수 있다.<br>
+(5) 한 파일내 3개 이상의 클래스에 모두 public 키워드가 없다면 클래스중 어느 것이라도 파일명이 될 수있다.<br>
+(6) 자바 파일에 클래스가 한개 있다면 클래스명이 곧 파일명이 되어야한다. <br>
+
+### 해설25
+
+```
+class A{}
+class B{}
+
+public class Java100ClassThree {
+	public static void main(String[] args) {
+	}
+}
+
+(1) O , 그렇다 2개이상의 클래스를 작성할수있다
+(2) public이 붙은 클래스가파일명이 될수있다.
+(3)하나의 파일에있는 클래스에는 한개만 public 을 붙일수있다.
+(4)가능하다
+(5) o
+(6) o
+```
+
+### 문제26
+
+클래스에서 생성자란 무엇이고 어떤 특징을 갖고 있는지 말해보시오.<br>
+//이 문제는 클래서에서 생성자의 개념과 역할, 특징 등에 대해서 알고 있는지를 묻는 문제이다. // 아래에서 생성자는?<br>
+
+```
+[1] : 생성자
+생성자는 new키워드로 클래스의 객체(또는 인스턴가)생성될때 제일 먼저 자동적으로 호출되는 특별한 메서드이다.
+따라서, 객체의 초깃값을 설정하는 등의 용도로 많이 사용된다.
+생성자명은 클래스명과 동일하게 만든다.
+생성자는 리턴되는 반환값이 없다. --> 객체가 생성될때 제일 먼저 호출만 된다.
+생성자는 오버로딩이 가능하다.
+생성자는 default생성자란게 있다. --> 클래스내에 생성자가 없다면 default 생성자가 자동호출 --> 클래스명과 동일하고, 받는인자값 x
+
+[2]:생성자 위치
+보통 속성과 메서드 사이에 기술한다.
+생성자도 메서드이므로 메서드 그에 속하는데 제일 상단에 보통 위치한다.
+
+class Person{
+	//[1]: 속성(attribute)
+	int age;
+	String name;
+	
+	
+	//[2]: 생성자(Constructor)
+	Person() {}
+	
+	//[3]: 메서드(Method)
+	void move() {
+		System.out.println("Person is moving");
+	}
+}
+```
 
 
 
