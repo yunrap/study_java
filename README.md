@@ -16,8 +16,9 @@ public class java100_variable_HelloWorld {
 }
 ```
 
+<details markdown="1">
 
-해설1
+### 해설1
 ```
 public class Java100ClassOne {	//클래스는 대문자 
 	public static void main(String[] args) {	//String 
@@ -26,6 +27,7 @@ public class Java100ClassOne {	//클래스는 대문자
 }	//자바는 클래스명이 첫시작은 대문자로 설정한다 
 ```
 
+</details>
 
 
 ### 문제2 <br>
@@ -41,7 +43,9 @@ public class Java100ClassOne {	//클래스는 대문자
  ```
 
 
-해설2
+### 해설2
+
+<details markdown="1">
 
 접근제한자 클래스선언 클래스이름 {
 	접근제한자 static 반환타입 메서드이름(파라미터) {
@@ -58,7 +62,7 @@ public class Java100ClassOne {	//클래스는 대문자
 (3) 클래스이름 --> 카멜케이스(단어와 단어사이의 구분 --> 대문자 ) <br>
 (4) 메서드이름 --> 메서드란? 함수 --> 어떤 특정한 동작이나 작업, 행위등을 수행하는 것. <br>
 
-
+</details>
 
 ### 문제3
 자바의 메인 메서드를 작성한 코드에서 틀린 곳을 찾아서 모두 수정하시오. <br>
@@ -76,7 +80,9 @@ public class Java100ClassOne {
 }
 ```
 
-해설3
+### 해설3
+
+<details markdown="1">
 
 ```
 public class Java100ClassOne {		//반드시 파일명과 클래스명과 동일하게할
@@ -97,6 +103,7 @@ public class Java100ClassOne {		//반드시 파일명과 클래스명과 동일�
 			--> String --> 문자열 --> [] 배열 --> args <br>
 			--> args는 하나의 변수명일경우 임의의 이름을 지정해도 무방. <br>
 
+</details>
 
 ### 문제4
 자바 메인 메서드에서 static 키워드의 역할에 대해서 설명해보시오. (★ ★ ★) <br>
@@ -115,13 +122,17 @@ public static void main(String[] args)
 ```
 
 
-해설4
+### 해설4
+
+<details markdown="1">
+
 (1) static으로 선언된 함수(메서드)나 변수는 자바 버츄얼 머신에서 인스턴스 객체 생성없이 호출 할수있다. <br>
 		쉽게말해서 , 객체 생성없이 해당 함수(메서드)를 호출해서 사용할 수 있다.  <br>
  자바프로그램을 실행하면 static으로 지정된 메서드를 찾아서 먼저 메모리에 할당시킨다.  <br>
  static으로 지정된 메서드가 여러개인 경우에는 객체를 생성하는 것과 상관없이 모두 메모리에 할당시킨다. <br>
  그런후에, "main"으로 이름이 만들어진 메서드가 있는지를 찾아서 그 메서드를 가장 먼저 시작점의 메소드로 호출시킨다 <br>
 
+</details>
 
 ### 문제5 
 변수와 변수 선언이란 무엇이고, 변수의 용도와 왜 필요한지 설명해보시오. 
@@ -132,7 +143,9 @@ public static void main(String[] args)
 왜필요한가? 
 
 
-해설5
+### 해설5
+
+<details markdown="1">
 
 ```
 public class Java100ClassOne {
@@ -147,7 +160,7 @@ public class Java100ClassOne {
 사용자가 입력한값을 변수를만들어서 저장을해놓고 어떻연산을하려해도, 변수가없다면 사용자가입력할 값들을 보관하고 저장할방법이없기때문에 <br>
 변수라는 저장바구니가있다면 보관이 용이하다. 또한 프로그래밍을 유연하고 편안하게 도와준다. <br>
 
-
+</details>
 
 
 
@@ -181,7 +194,9 @@ public class Java100ClassOne {
 정수형의 경우 사이즈와 범위도 말해보시오.<br>
 이문제는 자바의 자료형 종류와 각 타입의 사이즈에 대해서 아는지를 묻는 문제이다<br>
 
-해설6
+### 해설6
+
+<details markdown="1">
 
 [1] : 크게 봤을때 --> 기본형타입,참조형 타입<br>
 [2] : 기본형 타입(privitive data type) ---> 8개<br>
@@ -194,7 +209,7 @@ public class Java100ClassOne {
  대표적인 것들 --> 클래스, 배열, 인터페이스, 문자열 <br>
  참조형 변수의 특징 --> 데이터가 저장된 메모리의 주소값을 저장하는 변수이다. <br>
 
-
+</details>
 
 ### 문제7
 
@@ -216,7 +231,9 @@ char : 2(바이트) --> 16(비트) 		0 ~65535<br>
 
 
 
-해설7
+### 해설7
+
+<details markdown="1">
 
 ```
 public class Java100ClassOne {
@@ -235,6 +252,8 @@ public class Java100ClassOne {
 	}
 }
 ```
+
+</details>
 
 ### 문제8
 
@@ -265,7 +284,10 @@ public class Java100ClassOne {
 }
 ```
 
-해설8
+### 해설8
+
+<details markdown="1">
+
 ```
 public class Java100ClassOne {
 	public static void main(String[] args) {
@@ -315,6 +337,8 @@ public class Java100ClassOne {
 }
 ```
 
+</details>
+
 ### 문제9
 
 기본형 타입의 값을 초기화한 아래의 코드에서 틀린 곳을 찾아 수정하시오.<br>
@@ -331,7 +355,8 @@ char c = 'A';<br>
 boolean bl = false;<br>
 
 
-해설9
+### 해설9
+<details markdown="1">
 
 ```
 public class Java100ClassOne {
@@ -358,6 +383,7 @@ public class Java100ClassOne {
 }
 ```
 
+</details>
 
 ### 문제10
 
@@ -365,6 +391,7 @@ public class Java100ClassOne {
 아래 코드의 결과를 예상하여 말해보시오.<br>
 이 문제는 정수형과 문자형의 타입 변환시 일어나는 변화에 대해서 알고 있는지를 묻는 문제이다.<br>
 
+<details markdown="1">
 
 ```
 public class Java100ClassOne {
@@ -384,8 +411,12 @@ public static void main(String[] args) {
 }		
 ```
 
+</details>
 
-해설5
+
+### 해설5
+
+<details markdown="1">
 
 ```
 public class Java100ClassOne {
@@ -406,7 +437,7 @@ public static void main(String[] args) {
 //아스키테이블코드로 사용한다면 쉽다. 
 ```
 
-
+</details>
 
 
 
@@ -459,7 +490,8 @@ public class Java100ClassThree {
 
 
 
-해설 12
+### 해설 12
+<details markdown="1">
 
 ```
 public class Java100ClassThree {
@@ -481,6 +513,7 @@ public class Java100ClassThree {
 }
 ```
 
+</details>
 
 ### 문제 13
 반환값이 없고 받는 인자값이 2개 있는 덧셈 메서드를 구현하시오.<br>
@@ -489,6 +522,7 @@ public class Java100ClassThree {
 
 
 ### 해설 13
+<details markdown="1">
 
 ```
 public class Java100ClassThree {
@@ -512,6 +546,7 @@ public class Java100ClassThree {
 }
 ```
 
+</details>
 
 
 ### 문제14 
@@ -520,6 +555,7 @@ public class Java100ClassThree {
 
 
 ### 해설 14
+<details markdown="1">
 
 ```
 public class Java100ClassThree {
@@ -544,6 +580,7 @@ public class Java100ClassThree {
 
 ```
 
+</details>
 
 
 ### 문제15
@@ -554,6 +591,7 @@ public class Java100ClassThree {
 
 
 ### 해설 15
+<details markdown="1">
 
 ```
 public class Java100ClassThree {
@@ -582,6 +620,7 @@ public class Java100ClassThree {
 }
 ```
 
+</details>
 
 ### 문제16
 static 선언이 안되어있는 메서드를 사용하는 방법에 대해서 코드로 구현해보시오.<br>
@@ -590,6 +629,7 @@ static 선언이 안되어있는 메서드를 사용하는 방법에 대해서 �
  
  
 ### 해설 16
+<details markdown="1">
 
  ```
  public class Java100ClassThree {
@@ -609,7 +649,7 @@ static 선언이 안되어있는 메서드를 사용하는 방법에 대해서 �
 	}
 }
  ```
- 
+</details>
  
 
 ### 문제17
@@ -618,6 +658,7 @@ static 선언이 안되어있는 메서드를 사용하는 방법에 대해서 �
 
 
 ### 해설 17
+<details markdown="1">
 
 ```
 public class Java100ClassThree {
@@ -644,6 +685,7 @@ public class Java100ClassThree {
 }
 ```
 
+</details>
 
 ### 문제18
 메인 메서드에서 100을 보냈을 때 값이 수정되게끔 Call by reference 방식으로 코드를 수정하시오.<br>
@@ -652,6 +694,8 @@ a 값이 같은 결과가 나오도록 코드를 수정해보시오.<br>
 
 
 ### 해설18
+
+<details markdown="1">
 
 ```
 public class Java100ClassThree {
@@ -673,6 +717,7 @@ public class Java100ClassThree {
 }
 ```
 
+</details>
 
 ### 문제19
 
@@ -683,6 +728,8 @@ a 값이 같은 결과가 나오도록 코드를 수정해보시오.<br>
 
 
 ### 해설19
+
+<details markdown="1">
 
 ```
 class TestNumber{
@@ -709,13 +756,15 @@ public class Java100ClassThree {
 }
 ```
 
+</details>
+
 ### 문제20
 
 2개의 정수형 값을 리턴하는 메서드를 구현하시오.<br>
 이 문제는 두개의 리턴 값을 반환하는 메서드 작성법을 아는지에 대해서 묻는 문제이다. <br>
 
 
-
+<details markdown="1">
 
 ### 해설21
 ```
@@ -743,6 +792,8 @@ public class Java100ClassThree {
 }
 ```
 
+</details>
+
 ### 문제21
 반환값이 2개 있는 메서드를 구현해보시오.<br>
 메서드는 ( "korea", "USA" ) 입력시 소문자는 대문자로 대문자는 소문자로 출력되도록 구현한다.<br>
@@ -751,6 +802,8 @@ public class Java100ClassThree {
 
 
 ### 해설21
+
+<details markdown="1">
 
 ```
 public class Java100ClassThree {
@@ -782,6 +835,7 @@ public class Java100ClassThree {
 }
 ```
 
+</details>
 
 ### 문제22
 클래스란 무엇이고 어떤 역할을 하는지에 대해서 설명해보시오.<br>
@@ -789,6 +843,8 @@ public class Java100ClassThree {
 
 
 ### 해설22
+
+<details markdown="1">
 
 [1]: 클래스란 무엇인가?<br>
 클래스란 객체(또는 인스턴스)를 생성하는 하나의 공장(=틀, 프레임, 템플릿, 판형 등등...)이다.<br>
@@ -809,6 +865,7 @@ public class Java100ClassThree {
 객체의 동작 -->메서드(method) --> 함수와 거의 동일.<br>
 클래내에서의 함수는 메서드라고 부른다. 거의 함수와 동일하다. <br>
 
+</details>
 
 ### 문제23 (21.1.14)
 FarmMachine의 속성과 동작들을 가지는 클래스를 코드로 구현하고 <br>
@@ -826,6 +883,8 @@ Fram-machine is grinding.
 ```
 
 ### 해설23 
+
+<details markdown="1">
 
 ```
 class FarmMachine {
@@ -872,6 +931,7 @@ public class Java100ClassThree {
 	}
 }
 ```
+</details>
 
 ### 문제24 (21.01.15)
 문자열을 숫자로 바꿔서 연산해보시오.<br>
@@ -896,6 +956,8 @@ public class Java100ClassThree {
 
 
 ### 해설24 
+
+<details markdown="1">
 
 ```
 [!] : 왜 변환이 필요한가?
@@ -940,6 +1002,8 @@ public class Java100ClassThree {
 
 ```
 
+</details>
+
 ### 문제25
 
 다음은 클래스 작성시 주의할 사항인데 이중 틀린 것을 말해보시오.<br>
@@ -954,6 +1018,8 @@ public class Java100ClassThree {
 (6) 자바 파일에 클래스가 한개 있다면 클래스명이 곧 파일명이 되어야한다. <br>
 
 ### 해설25
+
+<details markdown="1">
 
 ```
 class A{}
@@ -972,10 +1038,14 @@ public class Java100ClassThree {
 (6) o
 ```
 
+</details>
+
 ### 문제26
 
 클래스에서 생성자란 무엇이고 어떤 특징을 갖고 있는지 말해보시오.<br>
 //이 문제는 클래서에서 생성자의 개념과 역할, 특징 등에 대해서 알고 있는지를 묻는 문제이다. // 아래에서 생성자는?<br>
+
+<details markdown="1">
 
 ```
 [1] : 생성자
@@ -1005,6 +1075,19 @@ class Person{
 	}
 }
 ```
+
+</details>
+
+
+### 문제27
+객체 생성시 초깃값을 생성자 메서드에서 설정하는 클래스를 구현해보시오. <br>
+이 문제는 클래스의 인스턴스 생성시 생성자를 통해서 초기화하는 것을 알고 있는지 묻는 문제이다. <br>
+
+[ 결과 출력 ] -------------------------------------------------------------------------------------------------------------------------------------------<br>
+<br>나이 : 20, 이름 : 홍길동
+<br>나이 : 30, 이름 : 이순신<br>
+나이 : 40, 이름 : 을지문덕<br>
+
 
 
 
