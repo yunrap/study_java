@@ -256,7 +256,6 @@ package java100one;
 //해설3
 //public class Java100ClassOne {
 //public static void main(String[] args) {
-	
 //	
 //	//[1] 변수선언
 //	int a;
@@ -290,17 +289,14 @@ package java100one;
 //	y = 900;
 //	z = 900;
 //	System.out.println("[4-2]:" + x+ "-" +y+ "-" +z);
-	
-	//[4-3] 이방식이 조금더 낫다?..
+//	[4-3] 이방식이 조금더 낫다?..
 //	int x1=300, y1=400, z1=300;
-	
-	//[4-4] 같은 값으로 초기화 
+//	[4-4] 같은 값으로 초기화 
 //	String str1, str2, str3;
 //	str1, str2, str3 = "korea";
 //	String str1, str2, str3;
 //	str1 = str2 = str3 = "korea";
 //	System.out.println(str1 +  str2 + str3);
-	
 //}
 //}
 
@@ -385,7 +381,7 @@ package java100one;
 //	}
 //
 //}	
-//아스키테이블코드로 사용한다면 쉽
+//아스키테이블코드로 사용한다면 쉽다. 
 
 
 //여기까지  ------------------
