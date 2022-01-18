@@ -536,9 +536,125 @@ import java.util.Arrays;
 //객체 생성시 초깃값을 생성자 메서드에서 설정하는 클래스를 구현해보시오.
 //이 문제는 클래스의 인스턴스 생성시 생성자를 통해서 초기화하는 것을 알고 있는지 묻는 문제이다.
 
+//[ 결과 출력 ] ------------------------------------------------------------------------------------------------------------------------------------------- 나이 : 20, 이름 : 홍길동
+//        나이 : 30, 이름 : 이순신
+//        나이 : 40, 이름 : 을지문덕
+
+//class Person{
+//    //[1] 속성 (Attribute)
+//    int age;
+//    String name;
+//
+//    //[2] 생성자(Constructor)
+//    Person() {}
+//    Person(int age, String name) {
+//        this.age = age; //객체가만들어질때 객체자신을가리킨다. this
+//        this.name = name;
+//    }
+//
+//    //[3]메서드(Method)
+//    void printPerson() {
+//        System.out.println("나이:" +age+ ", 이름"+ +name)
+//    }
+//
+//    public class Java100ClassThree {
+//        public static void main(String[] args) {
+//            Person p1 = new Person((20, "홍길동");
+//            System.out.println(p1);
+//            p1.printPerson();
+//
+//            Person p3 = new Person(30, "이순신");
+//            p3.printPerson();
+//        }
+//    }
+//}
 
 
+// 클래스에서 상속이란 무엇인지 상속의 정의와 특징을 말해보시오.
+// 이 문제는 자바 OOP 문법에서 상속에 대한 개념과 특징들에 대해서 알고 있는지를 묻는 문제이다.
 
+//문제 28
+//상속 이란?
+//말그대로 부모클래스가 가지고있는 변수들과 메소드등을 물려받아 새로운 클래스를 만드는 것.
+//상속을 활용하면 물려받은 것들은 그대로쓰면되고, 거기에 덧붙여 새로운것만 만들면된다.
+//이때, 물려받게 되는 원본클래스를 부모클래스 또는 슈퍼클래스라고부른다.
+//상속받아 새롭게 만들어진 클래스는 자식클래스 또는 서브클래스, 하위클래스라고부른다.
+//
+//[2] 상속의 장점
+//가장 큰 장점 --> 재활용성
+//완전히 새로운 것을 만드는것이아니라 기존 부모로부터 상속을 받아 필요한것만추가로만드는것
+//부모클래스에 정의되어있는 멤버필드나 메서드들을 그대로 상속받아 사용하면 된다.
+//상속받은 메서드라 해도 필요에 따라서 자식클래스에서 용도를 변경해서사용도 가능
+//
+//[3] 상속의 사용
+//기존 부모클래스를 확장한다는 개념 ----> extends 키워드사용
+//부모클래스의 멤버필드, 메서드는 상속이 가능하나 생성자는 상속이 안된다.
+//부모 클래스의 접근 제한자 private인 경우에는 아무리 자식 클래스가 상속받았다해도 접근불가능
+
+//문제 29
+
+// 클래스의 상속을 코드로 구현해보시오.
+// 이 문제는 자바 OOP 문법에서 상속에 대한 개념과 그것을 코드로 구현할 수 있는지를 묻는 문제이다
+
+
+    class Person{
+        //Field
+        int gender;
+        int power;
+
+        //constuctor
+        Person(){
+            this.gender = gender;
+            this.power = power;
+        }
+
+        //Method
+        void walk() {
+            System.out.println("걸어가고 있어요");
+        }
+    }
+
+    class Hero extends Person{
+        String name;
+        int age;
+
+        //constructor
+        Hero(){}
+        Hero(String name, int age)
+        {
+            this.name = name;
+            this.age = age;
+        }
+
+        //method
+        void walk(){
+            System.out.println("2배로 빨리 걸어가고있어요");
+        }
+
+        void eat(){
+            System.out.println("밥먹고 있어요");
+        }
+
+        void displayPerson(){
+            System.out.println("이름 :" +name+ ",나이" +age+ ",성멸:" +gender+ ",파워" +power);
+        }
+    }
+
+    public class Java100ClassThree {
+        public static void main(String[] args) {
+            Person p1= new Person();
+            p1.walk();
+            //p1.eat(); //err
+
+            //[2] 상속을 통한 슈퍼맨 객체생성
+            Hero h1 = new Hero("슈퍼맨, 20");  //먼저 부모 필드부분이 초기화가되고 -> 자식에서 초기화된다.
+            System.out.println(h1.name);
+            System.out.println(h1.age);
+            System.out.println(h1.gender);  //부모클래스 필드(변수)
+            System.out.println(h1.power); // 부모클래스 필드(변수)
+
+        }
+    }
 
 
 
