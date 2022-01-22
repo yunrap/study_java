@@ -277,6 +277,7 @@ public class Java100ClassThree {
 // 반복문(for)을 사용하여 객체 배열을 생성하고 출력해보시오.
 // 이 문제는 객체의 주소를 저장하고 있는 객체 배열을 반복문을 사용하여 만들 수 있는지를 묻는 문제이다.
 
+/*
 class Person{
     //Field
     private String name;
@@ -316,4 +317,4 @@ public class Java100ClassThree {
             System.out.println(temp.getAge() +"살\t"+ temp.getName());
         }
     }
-}
+}*/
