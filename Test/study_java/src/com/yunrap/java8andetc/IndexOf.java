@@ -1,4 +1,4 @@
-package study_java.src.com.yunrap.practice;
+package study_java.src.com.yunrap.java8andetc;
 
 //indexOf : 입력값이 문자열에 없다면, 리턴 -1
 //메서드에 문자열을 입력하면 위치에따라 숫자로 반환한다.

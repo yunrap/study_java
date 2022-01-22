@@ -1,4 +1,4 @@
-package study_java.src.com.yunrap.Java100Class;
+package study_java.src.com.yunrap.java100class;
 
 // 문제 30
 
