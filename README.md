@@ -1548,7 +1548,7 @@ public class Java100ClassThree {
 
 
 
-### 해설 31
+### 해설 33
 
 
 <details markdown="1">
@@ -1598,5 +1598,262 @@ public class Java100ClassThree {
 
 </details>
 
+### 문제 34
+
+추상 클래스와 추상 메서드란 무엇인지 설명하고 관련된 예제 코드를 구현해보시오.<br>
+이 문제는 자바의 추상 클래스, 추상 메서드의 개념과 역할에 대해서 알고 있는지를 묻는 문제이다.<br>
 
 
+아래의 질문에 답해보시오? ---------------------------------------------------------<br>
+1) 추상 클래스란 무엇인가?<br>
+2) 추상 클래스와 일반 클래스의 차이점은 무엇인가?<br>
+3) 추상 클래스는 객체 생성이 가능한가?<br>
+4) 추상 클래스는 어떻게 사용하는가?<br>
+5) 추상 클래스의 역할은 무엇이고 왜 필요한 것인가?<br>
+6) 추상 클래스는 상속이 가능한가?<br>
+7) 추상 클래스의 추상 메서드는 꼭 오버라이딩하여 사용해야만 하는가?<br>
+8) 추상 메서드를 포함하고 있다면 추상 클래스여야 하는가?<br>
+9) 추상 클래스를 만들려면 abstract를 꼭 써야 하는가?<br>
+
+### 해설 34
+
+<details markdown="1">
+
+```java
+public class Java100ClassFour {
+    @DisplayName("추상클래스")
+    @Test
+    void abstractClass() {
+
+        abstract class Animal {
+            //구체적인 내용은 작성하지않고 공통적인 특징을 추상적으로 선언--> 리턴값 조차도 없이 메서드만 선언.
+            abstract void cry();
+
+            void eat() {
+                System.out.println("먹다.");
+            }
+        }
+
+        class Dog extends Animal {
+            void cry() {
+                System.out.println("멍멍~");
+            }
+        }
+        abstract class Cat extends Animal {
+            //void cry(){System.out.println("야옹야옹");}
+        }
+
+        class Animal2 {
+            void fly() {
+                System.out.println("날다");
+            }
+        }
+
+        //[1]: 추상클래스는 구체적인 내용이 없기때문에 객체를 생성할 수 없다.
+        //Animal dob = new Animal();        //err
+        Animal2 dragonfly = new Animal2();
+        dragonfly.fly();
+
+        //[2] : 추상클래스의 사용은? --> 상속을 받아서 사용.
+        //즉 추상클래스를 상속받은 자식 클래스에서 해당 메서드를 오버라이딩하여 재정의한후 사용한다.
+        Dog dog = new Dog();
+        dog.cry();  //멍멍
+
+        //Cat cat = new Cat();
+        //cat.cry();  //야옹야옹
+
+        //[3]: Summary
+        //추상(부모)클래스는 다른 클래스들의 공통적인 특징을 변수나 메서드로 정의만 해놓은 것을 말한다. --> 추상메서드
+        //abstract를 앞에 붙이고 클래스안에 추상메서드를 포함하고있다는 것을 제외하면 일반클래스와 별반차이가없다.
+        //Field, Constructor, Method(추상메서드말고 일반 메서드)도 포함할 수 있다.
+        //메서드 선언만 있고 구체적인 내용은 없으므로 객체를 생성할 수 없다.
+        //따라서 부모클래스로서의 역활은 하지만, 구체적인 사용은 상속받은 자식클래스에서 재정의(오버라이딩)하여 사용해야 한다. -->강제
+
+        //왜쓰지?
+        //우선 강제하기 위함이다.
+        //부모(추상)클래스가 선언해놓은 메서드를 상속받은 자식 클래스들이 이름 그대로 재정의해서 구현하라고 강제하는 것이다
+        //즉, 일반메서드로 구현하면 누군가는 해당 메서드를 구현안 할 수도있다.
+        //무조건 상속받은 자식클래스입장에서는 추상 메서드를 재정의해서 구현하도록 강제하기 위함이다.
+
+        //꼭 재정의(override)해야만 하는가?
+        //일단 그렇다
+        //자식 클래스는 일단은 무조건 부모(추상)클래스로부터 상속받은 추상 메서드는 오버라이딩 해서 재정의해야한다.
+        //추상 메서드를 포함하고 있다면 곧 추상 클래스여야 한다.
+
+        //만약 재정의하고싶지 않다면?
+        //자식 클래스에서 상속받은 추상 메서드를 구현하지 않는다면 자식 클래스도 abstract를 붙여서 추상으로 만들어준다.
+        //class 앞에다가 abstract를 붙인다
+
+        //결론
+        //부모클래스에서 구현하지않는이유는 해당 메서드의 구현이 상속받는 클래스에따라서 달라질수있기 때문에 선언만 해둔것이다.
+        //분업화된 시스템에서 공통의 프로젝트를 진행할때 많이 사용되어지는 중요한 문법이다.
+
+    }
+}
+```
+
+</details>
+
+
+### 문제 35
+자바의 인터스 문법을 예제 코드로 구현해보시오. <br>
+이 문제는 자바 문법중 인터페이스에 대한 개념과 어떻게 사용하는지에 대해서 아는페이지를 묻는 문제이다.
+
+
+### Ch5 : 제네릭의 필요성
+제네릭(Generic)의 개념과 필요성에 대해서 예제 코드로 설명해보시오. <br>
+이 문제는 자바 문법중 제네릭에 대한 개념과 필요성에 대해서 알고 있는지를 묻는 문제이다. <br>
+모든 타입을 다 받는 클래스를 만들어보시오. <br>
+
+
+### 해설
+<details markdown="1">
+
+```java
+import java.sql.SQLOutput;
+
+class Sample{
+    //Field
+    private Object obj;
+
+    //Constructor
+    Sample(Object x) {
+        this.obj = x;
+    }
+
+    //Method
+    public Object getObj(){
+        return obj;
+    }
+
+    void printInfo(){
+        System.out.println(obj.getClass().getName());   //객체가 속하는 클래스의 정보를 출력하는 메서드
+    }
+
+}
+
+public class Java100ClassFive {
+
+    public static void main(String[] args){
+
+        // [1] : 객체생성 --> 문자열
+        Sample s1 = new Sample("안녕하세요~");
+        System.out.println(s1.getObj());
+        s1.printInfo();
+        System.out.println("-------------------------------");
+
+        //[2]: 객체생성 --> 숫자
+        Sample s2 = new Sample(100);    //Err (Sample클래스가 받는 생성자가 String이므로 정수를 받을수없다.)
+        System.out.println(s2.getObj());    //100
+        s2.printInfo();
+        System.out.println("-------------------------------");
+
+        //[3]: 객체생성 --> Object
+        Sample s3 = new Sample(new Object());
+        System.out.println(s3.getObj());    //100
+        s3.printInfo();
+        System.out.println("-------------------------------");
+
+        //[4]: 위와같이 사용시 --> 단점
+        //s1 -->  문자열
+        //String str = (String)s1.getObj();     //리턴시 반환타입이 Object 이다., 직접 형변환을해줘야함
+        //int num = (int)s2.getObj();           //동일하게안됨.
+
+        //Object stre = s1.getObj();
+        //System.out.println(stre.length());    //Err length는 string에서사용
+        String stre = (String)s1.getObj();
+        System.out.println(stre.length());      //6
+
+        //s2 --> 숫자
+        Object num = s2.getObj();
+        System.out.println((int)num + 100);
+
+    }
+
+}
+```
+
+</details>
+
+### Ch5 : 제네릭의 필요성 2
+ 컴파일 단계에서는 에러가 안나고, 실행 단계에서 ClassCast 오류가 발생하는 상황을 만들어보시오. <br>
+ 이 문제는 제네릭의 필요성을 보여주는 예를 코드로 설명할 수 있는지를 묻는 문제이다.  <br>
+
+### 해설
+
+<details markdown="1">
+
+```java
+class Person{
+    //Field
+    public Object obj;
+
+    //Constructor
+    Person(Object obj){ this.obj = obj; }
+}
+
+class Student{
+    //Field
+    public int grade;
+
+    //Constructor
+    Student(int grade){ this.grade = grade; }
+}
+
+class Teacher{ }
+
+
+public class Java100ClassFive {
+    public static void main(String[] args) {
+        //[1]: 객체 생성
+        Person p1 = new Person(new Student(3));
+        //System.out.println(p1.obj);
+
+        //[2]: 형변환 --> Cast
+        Student str = (Student)p1.obj;      //그전에 넣어준 형에맞는 타입으로 형변환해줘야한다.
+        System.out.println(str);   //6
+    }
+```
+
+</details>
+
+### Ch5 : 제네릭 구현방법
+ 제네릭(Generic) 개념과 사용법을 예제 코드로 구현해보시오. <br>
+ 이 문제는 자바 문법중 제네릭에 대한 개념과 사용법에 대해서 알고 있는지를 묻는 문제이다. <br>
+
+<details markdown="1">
+
+```java
+class Sample<T>{
+    private T obj;
+    Sample(T x){ this.obj = x; }
+    T getObj(){ return obj; }
+    void printInfo(){ System.out.println(obj.getClass().getName()); }
+}
+
+public class Java100ClassFive {
+    public static void main(String[] args) {
+        //[1]: 객체생성 --> String
+        Sample<String> s1 = new Sample<String>("안녕하세요!");
+        System.out.println(s1.getObj());
+        s1.printInfo();
+        System.out.println("---------------------------------");
+
+        //[2]: 객체생성 --> Integer
+        Sample<Integer> s2 = new Sample<Integer>(2);
+        System.out.println(s2.getObj());
+        s2.printInfo();
+
+        //[3]: 형변환 없이 사용하기
+        String str = s1.getObj();
+        System.out.println(str.length());   //6
+    }
+```
+</details>
+
+
+### Ch5 : 컬렉션 개념
+ 컬렉션(Collection) 프레임워크란 무엇인지 개념을 설명해보시오. <br>
+ 이 문제는 자바의 컬렉션에 대한 이해와 개념에 대해서 설명할 수 있는지를 묻는 문제이다. <br>
+
+//복습후 추후에
