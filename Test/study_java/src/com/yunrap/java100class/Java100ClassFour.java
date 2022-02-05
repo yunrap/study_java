@@ -255,25 +255,170 @@ public class Java100ClassFour {
 // 다음중 객체 생성 방법이 틀린 것을 골라보시오.
 // 앞서 다형성(polymorphism)의 개념에 대해서 살펴봤는데 코드를 통해서 실습해보는 문제이다.
 
-class Person {}
-class Student extends Person{}
+/*
+class Person {
+    String str1 = "난 부모 클래스";
+    void method1() { System.out.println("에이에이에이"); }
+    void ppp() { System.out.println("ppp"); }
+}
+class Student extends Person{
+    String str2 = "난 자식 클래스";
+    void method1(){ System.out.println("오버라이딩 - AAA"); }
+    void sss(){ System.out.println("sss"); }
+    void x(){
+        method1();
+        super.method1();
+    }
+}
 
 
 public class Java100ClassFour {
     public static void main(String[] args){
-        //[1] : 객체 생성
-        Student s1 = new Student(); //지극히 정상 --> 에러날이유가 하나도없다.
 
+        //[1] : 객체 생성 --> 부모 + 자식 클래스의 모든 자원을 다 쓸 수 있다.
+        System.out.println("=================================");
+        Student s1 = new Student();         //지극히 정상 --> 에러날이유가 하나도없다.
+        System.out.println(s1.str1);
+        System.out.println(s1.str2);
+        s1.method1();                       //오버라이딩 - AAA
+        s1.sss();                           //sss
+        s1.ppp();                           //ppp
+
+        //[!]: 그런데 말이죠.. --> 자식 클래스에서 오버라이딩된 부모 클래스의 원본 메서드를 호출하고 싶다면? --> super 사용.
+        System.out.println("---------------------[super사용]");
+        s1.x();
+
+        // 범위는 부모의 자원만을 쓸수있다.(?)
         //[2] : 객체 생성 --> 타입은 부모 타입으로 생성
-        Person s2 = new Student();  //이것도 정상 --> 하위(자식)클래스로 객체를 만들면서 타입은 상위(부모) 타입을 쓰는 것이 가능 --> 다형성
+        System.out.println("=================================");
+        Person s2 = new Student();          //이것도 정상 --> 하위(자식)클래스로 객체를 만들면서 타입은 상위(부모) 타입을 쓰는 것이 가능 --> 다형성
+        System.out.println(s2.str1);
+        //System.out.println(s2.str2);      //err --> 자식의 자원은 쓸 수 없다.
+        s2.ppp();                           //ppp
+        //s2.sss();                         //err --> 자식의 자원은 쓸 수 없다.
+        s2.method1();                       //오버라이딩 -- AAA --> 오버라이딩한거는 자식의 메서드로 실행.
+
+        //[!] : 그런데 말이죠. --> 자식의 메서드를 바로 호출하고 싶다면? --> 캐스트 필요.
+        System.out.println("---------------------[캐스트사용]");
+        ((Student)s2).sss();                //sss
+        System.out.println("---------------------[캐스트사용]");
+
 
         //[3] : 객체 생성
         Person aaa = new Person();   //지극히 정상
+        aaa.method1();               //aaa
+        //aaa.sss();                   //err
+
 
         //[4] : 객체 생성 --> 상위(부모) 클래스로 객체를 생성하면서 타입은 하위(자식) 타입을 쓰는 경우 --> Err
         //Student bbb = new Person(); //Err
     }
 }
+*/
 
 
+//### ch4 : 다형성을활용한, 추상클래스 상속사용
+// 추상 클래스와 상속을 사용하여 다형성 예제를 만들어보시오.
+// 이 문제는 추상 클래스와 상속의 개념을 이해하고 이를 활용하여 다형성을 구현할 수 있는지를 묻는 문제이다.
 
+/*abstract class Car{
+    abstract void run();
+}
+
+class Ambulance extends Car{
+    @Override
+    void run(){
+        System.out.println("앰블런스 지낭가요 ~ 삐뽀삐뽀 ~");
+    };
+}
+
+class Cultivator extends Car{
+    @Override
+    void run(){
+        System.out.println("경운기 지나가요~덜컹덜컹~");
+    }
+}
+
+class SportCar extends Car{
+    @Override
+    void run(){
+        System.out.println("스포츠가 지나가요~쌩~");
+    }
+}
+
+
+public class Java100ClassFour {
+    public static void main(String[] args){
+
+        Car c1 = new Ambulance();   //정상
+        Car c2 = new Cultivator();   //정상
+        Car c3 = new SportCar();   //정상
+
+        c1.run();
+        c2.run();
+        c3.run();
+    }
+}*/
+
+//### ch4 : 다형성을활용한, for문사용
+// 다형성(polymorphism)을 활용한 객체 생성시 배열과 반복문을 사용하여 객체를 생성해보시오.
+// 반복문은 향상된 for문으로도 출력해본다.
+// 다형성을 이용한 객체 생성시 배열과 for문을 통해서 자동으로 객체를 생성할 수 있는지를 묻는 문제이다.
+
+
+abstract class Car{
+    abstract void run();
+}
+
+class Ambulance extends Car{
+    @Override
+    void run(){
+        System.out.println("앰블런스 지낭가요 ~ 삐뽀삐뽀 ~");
+    };
+}
+
+class Cultivator extends Car{
+    @Override
+    void run(){
+        System.out.println("경운기 지나가요~덜컹덜컹~");
+    }
+}
+
+class SportCar extends Car{
+    @Override
+    void run(){
+        System.out.println("스포츠가 지나가요~쌩~");
+    }
+}
+
+public class Java100ClassFour {
+
+    public static void main(String[] args) {
+        //[1]: 배열길이가 3인 Car 객체 배열 선언
+        //Car[] cars = new Car[3];
+        //System.out.println(cars[0]);    //null--> 각배열에는 아직 null 값만 존재.
+        //cars = new Car[]{new Ambulance(), new Cultivator(), new SportCar()};
+
+        //System.out.println(cars[0]);
+        //System.out.println(cars[1]);
+        //System.out.println(cars[2]);
+
+        //[2] : 1번방법 말고 --> 자식클래스로 객체 생성 --> 타입은 부모 타입으로 --> 이렇게 생성된 객체들로 바로 배열 초기화 --> 다형성 덕분.
+        Car[] cars = {new Ambulance(), new Cultivator(), new SportCar()};
+
+        //[3] : 반복문 돌면서 각 객체의 run() 메서드 호출
+        for(int i=0; i<cars.length; i++)
+        {
+            System.out.println(cars[i]);    //각 객체가 생성된 메모리 공간의 주소 값을 출력.
+            cars[i].run();
+        }
+
+        //[4] : 향상된 for문
+        System.out.println("----------------------------------");
+        for(Car i : cars)
+        {
+            System.out.println(i);
+            i.run();
+        }
+    }
+}
