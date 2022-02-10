@@ -7,6 +7,7 @@ package study_java.src.com.yunrap.java8andetc;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
 import java.util.function.Function;
 
 
@@ -20,6 +21,7 @@ public class LamdaExpression {
         interface  Calculator{
             int sum(int a, int b);
         }
+        
 
         class MyCalculator implements Calculator{
             public int sum(int a, int b){
@@ -49,29 +51,31 @@ public class LamdaExpression {
             //int minus(int b, int c);
         }
 
-        Calculator mc = (int a, int b) -> a+b;
+        Calculator mc = (int a, int b) -> {return a+b;};  //괄호안에 매개변수
         int result = mc.sum(3,4);
         System.out.println(result);
+
+        Calculator mc1 = (a,b ) -> {return a+b;};
+        int result2 = mc1.sum(4,5); // 매개변수 생략
+        System.out.println(result2);
+
     }
+
 
 
     //------------------------------------------------------
-    @DisplayName("람다 축약")
+    @DisplayName("람다식을 사용한 for문")
     @Test
-    void lamdaSummar(){
-
-        @FunctionalInterface
-        interface Exercise{
-            String run(String a, String b);
+    void enhanceForLamda(){
+        ArrayList<Integer> daylist =new ArrayList<Integer>();
+        daylist.add(3);
+        daylist.add(12);
+        daylist.add(22);
+        for(int a : daylist){
+            System.out.println(a);
         }
 
-        //Exercise mc = Integer::run; -> 다시
-        String result = mc.run("걷다", "뛰다");
-        System.out.println(result);
-
-
     }
-
 
     //------------------------------------------------------
     //java8의 Function은 무엇인가?
@@ -85,5 +89,8 @@ public class LamdaExpression {
         System.out.println(result);
 
     }
+
+
+
 
 }
