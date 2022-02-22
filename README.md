@@ -2400,3 +2400,32 @@ public class Java100ClassFive {
 }
 ```
 </details>
+
+### Ch5 : ArrayList , Map 같이처리
+
+<details markdown="1">
+
+```java
+public class Java100ClassFive {
+public static void main(String[] args) {
+     // HashMap 과 ArrayList 함께 사용하기
+     List list = new ArrayList<Object>();
+     Map<String, Object> map = new HashMap<String, Object>();
+     map.put("key1", "value1");
+     map.put("key2", "value2");
+
+        Map<String, Object> map2 = new HashMap<String, Object>();
+        map2.put("key3", "value3");
+        map2.put("key4", "value4");
+
+        list.add(map);
+        list.add(map2);
+        // Map에 Data를 넣은뒤에 List에 담는 로직
+
+        System.out.println(list);
+
+    }
+}
+```
+
+</details>

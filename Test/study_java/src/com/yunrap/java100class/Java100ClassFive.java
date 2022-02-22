@@ -179,8 +179,11 @@ public class Java100ClassFive {
 import study_java.src.com.yunrap.java8andetc.ArrayList1;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
-public class Java100ClassFive {
+/*public class Java100ClassFive {
     public static void main(String[] args) {
         //[1]: ArrayList를 제네릭이 아닌 Object 타입으로 사용하는 경우.
         ArrayList list1 = new ArrayList();
@@ -210,6 +213,27 @@ public class Java100ClassFive {
         for(int i=0; i<list1.size(); i++){
             System.out.println(list1.get(i) +"");
         }
+    }
+}*/
+
+public class Java100ClassFive {
+    public static void main(String[] args) {
+        // HashMap 과 ArrayList 함께 사용하기
+        List list = new ArrayList<Object>();
+        Map<String, Object> map = new HashMap<String, Object>();
+        map.put("key1", "value1");
+        map.put("key2", "value2");
+
+        Map<String, Object> map2 = new HashMap<String, Object>();
+        map2.put("key3", "value3");
+        map2.put("key4", "value4");
+
+        list.add(map);
+        list.add(map2);
+        // Map에 Data를 넣은뒤에 List에 담는 로직
+
+        System.out.println(list);
+
     }
 }
 
