@@ -1,5 +1,32 @@
 package study_java.src.com.yunrap.java100class;
 
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+public class Java100ClassThree {
+
+    public void helloWorld() {
+        System.out.println( "Hello, World~ ^_^" );
+    }
+
+    public static void helloWorld2() {
+        System.out.println("Nihao, World~ ^_^");
+    }
+
+    public static void main(String[] args) {
+        // [1] : 메서드 호출
+        //Java100ClassThree.helloWorld(); // static메소드가 아니기때문 클래스.메소드 불가능
+
+        // [2] : 객체생성후 호출
+        Java100ClassThree v1 = new Java100ClassThree();
+        v1.helloWorld();
+
+        // [3] : 클래스메소드는 객체생성 x 클래스.메소드가능
+        Java100ClassThree.helloWorld2();    // 객체 생성없이 호출가능 , 클래스.메소드
+    }
+}
+
+
 // 문제 30
 
 // 클래스 상속에서 메서드 오버라이딩에 대해서 설명하고 구현해보시오.
@@ -212,23 +239,18 @@ public class Java100ClassThree {
     }
 }*/
 
-//### 문제 32
+//### ch4 : 객체배열 구현법
 // 객체에 대한 참조값을 요소로 가지는 객체 배열을 생성하는 코드를 구현하시오.
 // 이 문제는 기본형 타입이 아닌 참조형 타입의 객체가 원소인 객체 배열을 구현할 수 있는지를 묻는 문제이다.
 // 아래와 같이 출력하는데 다양한 방식으로 출력해보시오. → 3가지 정도로..
 // 반복문을 사용해서 객체를 생성해보시오.
 
-/*[ 결과 출력 ] -------------------------------------------------------------------------------------------------------------------------------------------
-        0번 후보자 --> 나이 : 20
-        1번 후보자 --> 나이 : 21
-        2번 후보자 --> 나이 : 22
-        3번 후보자 --> 나이 : 23
-        4번 후보자 --> 나이 : 24
-        5번 후보자 --> 나이 : 25
-        6번 후보자 --> 나이 : 26
-        7번 후보자 --> 나이 : 27
-        8번 후보자 --> 나이 : 28
-        9번 후보자 --> 나이 : 29
+/*[ 결과 출력 ]
+        홍길동		나이 : 20
+        장길동		나이 : 21 <br>
+        김길동		나이 : 22 <br>
+        영길동		나이 : 23
+        오길동		나이 : 24 <br>
  */
 
 /*

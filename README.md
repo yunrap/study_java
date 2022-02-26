@@ -132,18 +132,17 @@ public class Java100ClassOne {
 <details markdown="1">
 
 ```text
-(1) static으로 선언된 함수(메서드)나 변수는 자바 버츄얼 머신에서 인스턴스 객체 생성없이 호출 할수있다. 
-		쉽게말해서 , 객체 생성없이 해당 함수(메서드)를 호출해서 사용할 수 있다.  
- 자바프로그램을 실행하면 static으로 지정된 메서드를 찾아서 먼저 메모리에 할당시킨다. 
- static으로 지정된 메서드가 여러개인 경우에는 객체를 생성하는 것과 상관없이 모두 메모리에 할당시킨다.
- 그런후에, "main"으로 이름이 만들어진 메서드가 있는지를 찾아서 그 메서드를 가장 먼저 시작점의 메소드로 호출시킨다
+(1) static으로 선언된 함수(메서드)나 변수는 자바 버쥬얼 머신에서 인스턴스 객체 생성없이 호출 할 수 있다.
+쉽게 말해서, 객체 생성없이 해당 함수(메서드)를 호출해서 사용할 수 있다.
+자바프로그램을 실행하면 static으로 지정된 메서드를 찾아서 먼저 메모리에 할당시킨다
+static 으로 지정된 메서드가 여러개인 경우에는 객체를 생성하는 것과 상관없이 모두 메모리에 할당시킨다.
+그런후에, "main"으로 이름이 만들어진 메서드가 있는지를 찾아서 그 메서드를 가장 먼저 시작점의 메소드로 호출시킨다.
 ```
-
 
 </details>
 
 -----------------------------------------------------------------------------------------------------
-### ch1 : 변수란? 
+### ch1 : 변수란? 변수의 필요성?
 변수와 변수 선언이란 무엇이고, 변수의 용도와 왜 필요한지 설명해보시오. 
  1. 변수란 무엇인가?
 2. 변수 선언이란 무엇인가?
@@ -154,7 +153,7 @@ public class Java100ClassOne {
 
 ### 해설
 
-#### 변수 사용 x
+#### 변수 사용 안했을때
 <details markdown="1">
 
 ```java
@@ -173,8 +172,7 @@ public class Java100ClassOne {
 
 </details>
 
-
-#### 변수 사용 o
+#### 변수 사용 했을때
 <details markdown="1">
 
 ```java
@@ -212,7 +210,7 @@ public class Java100ClassOne {
 <details markdown="1">
 
 ```text
-[1] : 크게 봤을때 --> 기본형타입,참조형 타입
+[1] : 크게 봤을때 --> 기본형타입, 참조형타입
 [2] : 기본형 타입(privitive data type) ---> 8개
         정수형 --> byte(1byte) , short(2), int(4), long(8)
         실수형 --> float(4) , double(8)
@@ -281,7 +279,6 @@ public class Java100ClassOne {
 이 문제는 변수 선언과 사용시 주의할 점에 대해서 알고 있는지를 묻는 문제이다.<br>
 
 <details markdown="1">
-
 
 ```
 public class Java100ClassOne {
@@ -413,7 +410,7 @@ public class Java100ClassOne {
 -----------------------------------------------------------------------------------------------------
 
 
-### 문제10
+### ch1 : 형변환 사용
 
 정수형 변수를 문자형으로 형(Type) 변환시켜서 출력하면 어떤 결과가 나오는지 말해보시오.<br>
 아래 코드의 결과를 예상하여 말해보시오.<br>
@@ -442,7 +439,7 @@ public static void main(String[] args) {
 </details>
 
 
-### 해설5
+### 해설
 
 <details markdown="1">
 
@@ -474,9 +471,7 @@ public static void main(String[] args) {
 # 자바 1000제 part3
 
 
-## 함수 
-
-### 문제 11
+### ch3 : 클래스 메소드 <-> 인스턴스 메소드
 아래의 메서드 구현 코드에서 틀린 곳을 찾아 올바르게 수정하시오. <br>
 이 문제는 자바의 메서드 구현시 기본적인 주의점에 대해서 아는지를 묻는 문제이다.<br>
 클래스명.메서드명();<br>
@@ -485,20 +480,27 @@ public static void main(String[] args) {
 ```
 public class Java100ClassThree {
 
-	public void helloWorld() {
-		System.out.println( "Hello, World~ ^_^" );
-	}
-	 
-	public static void main(String[] args) {
-		// [1] : 메서드 호출 
-		helloWorld();
-		
-	}
+    public void helloWorld() {
+        System.out.println( "Hello, World~ ^_^" );
+    }
+
+    public static void helloWorld2() {
+        System.out.println("Nihao, World~ ^_^");
+    }
+
+    public static void main(String[] args) {
+        // [1] : 메서드 호출
+        //Java100ClassThree.helloWorld(); // static메소드가 아니기때문 클래스.메소드 불가능
+
+        // [2] : 객체생성후 호출
+        Java100ClassThree v1 = new Java100ClassThree();
+        v1.helloWorld();
+
+        // [3] : 클래스메소드는 객체생성 x 클래스.메소드가능
+        Java100ClassThree.helloWorld2();    // 객체 생성없이 호출가능 , 클래스.메소드
+    }
 }
 ```
-
-해설 11
-
 
 ### 문제 12
 메서드의 정의와 기본적인 자바의 메서드를 작성해보시오.<br>
@@ -506,7 +508,7 @@ public class Java100ClassThree {
 
 [1] 메서드란 무엇인가?<br>
  (1) 메서드는 다른 언어에서의 함수와 마찬가지로 어떤 특정한 동작이나 처리를 하도록 만들어진 코드 단위이다.<br>
- (2) 반복적인 작업을 처리해야 하는 경우 메서드로 만들어놓으면 이후에 필요할때 다시 재사용할 수 있어서 아주 유용하다.<br>
+ (2) 반복적인 작업을 처리해야하는 경우 메서드로 만들어놓으면 이후에 필요할때 다시 재사용할 수 있어서 아주 유용하다.<br>
  (3) 메서드는 호출시 어떤 결과를 반환하기도 하지만, 결과를 반환하지 않는메서드도 있다.<br>
  (4) 메서드는 호출시 어떤 인자 값들을 넘겨서 호출하는 경우도 있지만, 인자 값 없이 호출하는 경우도 있다. <br>
 
@@ -2429,3 +2431,13 @@ public static void main(String[] args) {
 ```
 
 </details>
+
+### Ch5 : ArrayList , Map 같이처리
+
+```text
+ 컬렉션 프레임워크의 ArrayList 기반으로 2차원 배열을 만들어 요소를 추가하고 출력해보시오.
+ 이 문제는 제법 까다로운 문제로서, ArrayList를 이용한 2차원 배열에 대한 개념을 잘 알고 있는지를 묻는 문제이다. 
+ 배열과 2차원에 대한 개념이 약하면 거의 풀지 못하므로, 배열과 2차원에 대한 선학습을 하고 강의를 보도록 한다.
+
+```
+
